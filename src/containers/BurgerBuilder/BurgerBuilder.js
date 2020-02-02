@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Auxiliary from '../../hoc/Auxiliary';
+import Aux from '../../hoc/Aux';
 import Burger from '../../components/Burger/Burger';
 
 class BurgerBuilder extends Component {
@@ -8,7 +8,7 @@ class BurgerBuilder extends Component {
     //     super(props);
     //     this.state = {...}
     // }
-    state =  {
+    state = {
         ingredients: {
             salad: 0,
             bacon: 0,
@@ -16,12 +16,13 @@ class BurgerBuilder extends Component {
             meat: 0
         }
     }
-    render() {
+
+    render () {
         return (
-            <Auxiliary>
+            <Aux>
                 <Burger ingredients={this.state.ingredients} />
                 <div>Build Controls</div>
-            </Auxiliary>
+            </Aux>
         );
     }
 }
