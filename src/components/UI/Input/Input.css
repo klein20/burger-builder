@@ -27,6 +27,6 @@
 }
 
 .Invalid {
-    border: 1px solid tomato;
-    background-color: rgb(228, 188, 183);
+    border: 1px solid red;
+    background-color: #FDA49A;
 }

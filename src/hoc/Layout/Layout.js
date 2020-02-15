@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Auxiliary from '../Auxliliary/Auxiliary';
 import classes from './Layout.css';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
-import SideDrawer from '../../components/Navigation/SideDrawer/SiderDrawer';
+import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 
 class Layout extends Component {
     state = {
@@ -19,8 +19,6 @@ class Layout extends Component {
             return { showSideDrawer: !prevState.showSideDrawer };
         } );
     }
-
-    
 
     render () {
         return (
