@@ -22,7 +22,7 @@ export const authFail = (error) => {
     };
 };
 
-export const auth = (email, password) => {
+export const auth = (email, password, isSignUp) => {
     return dispatch => { // thanks to redux-thunk
         dispatch(authStart());
         const authData = {
@@ -30,7 +30,11 @@ export const auth = (email, password) => {
             password: password,
             returnSecureToken: true
         };
-        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCSIWUpFInoJK2shfFsDQE9ZNMCCi9vqBc', authData) 
+        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCSIWUpFInoJK2shfFsDQE9ZNMCCi9vqBc';
+        if (!isSignUp) {
+            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCSIWUpFInoJK2shfFsDQE9ZNMCCi9vqBc';
+        }
+        axios.post(url, authData) 
             .then(response => {
                 console.log(response);
                 dispatch(authSuccess(response.data));
