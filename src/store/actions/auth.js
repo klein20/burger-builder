@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 import * as actionTypes from './actionTypes';
 
 export const authStart = () => {
@@ -23,5 +25,20 @@ export const authFail = (error) => {
 export const auth = (email, password) => {
     return dispatch => { // thanks to redux-thunk
         dispatch(authStart());
+        const authData = {
+            email: email,
+            password: password,
+            returnSecureToken: true
+        };
+        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCSIWUpFInoJK2shfFsDQE9ZNMCCi9vqBc', authData) 
+            .then(response => {
+                console.log(response);
+                dispatch(authSuccess(response.data));
+            })
+            .catch(err => {
+                console.log(err);
+                dispatch(authFail(err));
+            });
+            
     }
 }
