@@ -46,6 +46,12 @@
     color: white;
 }
 
+.BuildControl .Available {  
+    width: 100px;
+    background-color: #AF601A;
+    color: white;
+}
+
 .BuildControl .Less:hover, .BuildControl .Less:active {  
     background-color: #DAA972;
     color: white;

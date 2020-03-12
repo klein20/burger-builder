@@ -104,7 +104,6 @@ const auth = props => {
         if (props.isAuthenticated) {
             authRedirect = <Redirect to={props.authRedirectPath}/>
         }
-
         return (
             <div className={classes.Auth}>
                 {authRedirect}

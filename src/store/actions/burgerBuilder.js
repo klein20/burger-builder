@@ -15,6 +15,12 @@ export const removeIngredient = ( name ) => {
     };
 };
 
+export const unavailableIngredient = () => {
+    return {
+        type: actionTypes.UNAVAILABLE_INGREDIENT
+    };
+};
+
 export const setIngredients = ( ingredients ) => {
     return {
         type: actionTypes.SET_INGREDIENTS,

@@ -12,6 +12,10 @@ const buildControl = (props) => (
         <button 
             className={classes.More} 
             onClick={props.added}>More</button>
+        <button
+            className={classes.Available}
+            onClick={props.unavailabled}
+        >Available</button>
     </div>
 );
 

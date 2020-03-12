@@ -23,7 +23,6 @@ const app = props => {
   useEffect(() => {
     props.onTryAutoSignup();
   }, []);
-
   let routes = (
     <Switch>
       <Route path="/auth" render={props => <Auth {...props} />} />
@@ -31,7 +30,6 @@ const app = props => {
       <Redirect to="/" />
     </Switch>
   );
-
   if (props.isAuthenticated) {
     routes = (
       <Switch>
@@ -72,3 +70,5 @@ export default withRouter(
     mapDispatchToProps
   )(app)
 );
+
+
